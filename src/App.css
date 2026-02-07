@@ -1,0 +1,108 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Arial, sans-serif;
+}
+
+body {
+  background: linear-gradient(to bottom, #0f0c02, #2a1f05);
+  color: #fff;
+}
+
+/* Container */
+.container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 40px 20px;
+}
+
+/* Header */
+.header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.header h1 {
+  font-size: 38px;
+  color: #f5c96a;
+  margin-bottom: 10px;
+}
+
+.header p {
+  color: #ccc;
+  font-size: 16px;
+}
+
+/* Search */
+.search-box {
+  display: block;
+  margin: 20px auto 40px;
+  padding: 12px;
+  width: 300px;
+  border-radius: 6px;
+  border: none;
+  outline: none;
+  font-size: 15px;
+}
+
+/* Cards */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 30px;
+}
+
+/* Card */
+.card {
+  background: radial-gradient(circle at top, #3a2c0a, #1b1403);
+  border-radius: 16px;
+  padding: 25px 20px;
+  text-align: center;
+  box-shadow: 0 0 20px rgba(255, 200, 90, 0.15);
+  transition: 0.3s;
+  border: 1px solid rgba(255, 215, 100, 0.2);
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 0 30px rgba(255, 200, 90, 0.35);
+}
+
+/* Ring */
+.ring {
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  margin: 0 auto 15px;
+  border: 10px solid #f5c96a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  font-weight: bold;
+  color: #f5c96a;
+  background: #120d02;
+}
+
+/* Karat */
+.karat {
+  font-size: 22px;
+  margin-bottom: 8px;
+  color: #ffd76a;
+}
+
+/* Price */
+.price {
+  font-size: 24px;
+  font-weight: bold;
+  color: #38d46c;
+  margin-top: 10px;
+}
+
+/* Unit */
+.unit {
+  font-size: 13px;
+  color: #bbb;
+  margin-top: 5px;
+}
