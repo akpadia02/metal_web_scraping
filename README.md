@@ -1,16 +1,142 @@
-# React + Vite
+# Indian Metals Price Dashboard (Frontend)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is the frontend application for the Indian Metals & Gold Price Dashboard.
+It displays real-time gold prices using data fetched from the deployed backend API.
 
-Currently, two official plugins are available:
+The frontend is built using React and Vite with plain CSS for styling.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## React Compiler
+## Features
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- Displays live gold prices by karat
+- Responsive dashboard layout
+- Search and filter functionality
+- Connects to live backend API
+- Lightweight and fast UI
+- Mobile-friendly design
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Tech Stack
+
+| Technology | Purpose |
+|------------|----------|
+| React      | UI Framework |
+| Vite       | Build Tool |
+| Axios      | API Requests |
+| CSS        | Styling |
+
+---
+
+## Project Structure
+
+frontend/
+│
+├── index.html
+├── package.json
+├── vite.config.js
+└── src/
+    ├── App.jsx
+    ├── App.css
+    └── main.jsx
+
+---
+
+## Installation & Setup (Local)
+
+### Step 1: Navigate to Frontend Folder
+
+cd indian-metals-dashboard/frontend
+
+---
+
+### Step 2: Install Dependencies
+
+npm install
+
+---
+
+### Step 3: Run Development Server
+
+npm run dev
+
+Application will run at:
+
+http://localhost:5173
+
+---
+
+## Connecting to Backend
+
+Open the following file:
+
+src/App.jsx
+
+Update the API URL:
+
+axios.get("https://web-scraping-backend-k13b.onrender.com/api/metals")
+
+This connects the frontend to the live backend.
+
+---
+
+## Build for Production
+
+To generate production build:
+
+npm run build
+
+Build files will be created inside:
+
+dist/
+
+---
+
+## Deployment
+
+This frontend can be deployed on:
+
+- Vercel
+- Netlify
+- GitHub Pages
+
+### Example (Vercel)
+
+| Setting | Value |
+|---------|--------|
+| Framework | Vite |
+| Root Directory | frontend |
+| Build Command | npm run build |
+| Output Directory | dist |
+
+---
+
+## Limitations
+
+- Depends on backend availability
+- Free hosting may have cold starts
+- No offline support
+
+---
+
+## Future Enhancements
+
+- Dark mode support
+- Price charts
+- Auto refresh
+- User login system
+- Notifications
+
+---
+
+## Author
+
+Akshay H. Padia  
+B.Tech CSE
+
+---
+
+## License
+
+For academic and educational use only.
