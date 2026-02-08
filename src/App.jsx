@@ -9,7 +9,7 @@ function App() {
 
   useEffect(() => {
 
-    axios.get("http://localhost:5000/api/metals")
+    axios.get("https://web-scraping-backend-k13b.onrender.com/api/metals")
       .then(res => {
         setGoldData(res.data.gold.types);
       })
