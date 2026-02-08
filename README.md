@@ -29,20 +29,6 @@ The frontend is built using React and Vite with plain CSS for styling.
 
 ---
 
-## Project Structure
-
-frontend/
-│
-├── index.html
-├── package.json
-├── vite.config.js
-└── src/
-    ├── App.jsx
-    ├── App.css
-    └── main.jsx
-
----
-
 ## Installation & Setup (Local)
 
 ### Step 1: Navigate to Frontend Folder
@@ -92,51 +78,3 @@ Build files will be created inside:
 dist/
 
 ---
-
-## Deployment
-
-This frontend can be deployed on:
-
-- Vercel
-- Netlify
-- GitHub Pages
-
-### Example (Vercel)
-
-| Setting | Value |
-|---------|--------|
-| Framework | Vite |
-| Root Directory | frontend |
-| Build Command | npm run build |
-| Output Directory | dist |
-
----
-
-## Limitations
-
-- Depends on backend availability
-- Free hosting may have cold starts
-- No offline support
-
----
-
-## Future Enhancements
-
-- Dark mode support
-- Price charts
-- Auto refresh
-- User login system
-- Notifications
-
----
-
-## Author
-
-Akshay H. Padia  
-B.Tech CSE
-
----
-
-## License
-
-For academic and educational use only.
