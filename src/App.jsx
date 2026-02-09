@@ -35,7 +35,7 @@ function App() {
 
         // Call backend API
         const res = await axios.get(
-          "http://127.0.0.1:5000/api/metals"
+          "https://web-scraping-backend-k13b.onrender.com/api/metals"
         );
 
         // Store response in state
