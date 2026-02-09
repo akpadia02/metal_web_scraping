@@ -73,7 +73,7 @@ function App() {
             </div>
 
             <div className="unit">
-              Per 10 Grams
+              Per 1 Grams
             </div>
 
           </div>
