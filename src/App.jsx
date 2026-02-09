@@ -1,85 +1,152 @@
+// Import React hooks
 import { useEffect, useState } from "react";
+
+// Import Axios for API calls
 import axios from "axios";
+
+// Import CSS styling
 import "./App.css";
+
 
 function App() {
 
-  const [goldData, setGoldData] = useState({});
+  /* ---------------- STATE VARIABLES ---------------- */
+
+  // Stores all commodities data
+  const [data, setData] = useState({});
+
+  // Stores search text
   const [search, setSearch] = useState("");
 
+  // Tracks loading status
+  const [loading, setLoading] = useState(true);
+
+
+
+  /* ---------------- FETCH DATA ---------------- */
+
+  // Runs when component loads
   useEffect(() => {
 
-    axios.get("https://web-scraping-backend-k13b.onrender.com/api/metals")
-      .then(res => {
-        setGoldData(res.data.gold.types);
-      })
-      .catch(err => console.log(err));
+    // Function to fetch API data
+    const fetchData = async () => {
 
-  }, []);
+      try {
+
+        // Call backend API
+        const res = await axios.get(
+          "http://127.0.0.1:5000/api/metals"
+        );
+
+        // Store response in state
+        setData(res.data);
+
+        // Stop loading
+        setLoading(false);
+
+      } catch (err) {
+
+        // Print error in console
+        console.error("API Error:", err);
+
+        // Stop loading even if error
+        setLoading(false);
+      }
+    };
+
+    // Call API
+    fetchData();
+
+  }, []); // Empty dependency = run once
 
 
-  const filtered = Object.entries(goldData).filter(([name]) =>
+
+  /* ---------------- FILTER DATA ---------------- */
+
+  // Filter metals based on search text
+  const filtered = Object.entries(data).filter(([name]) =>
     name.toLowerCase().includes(search.toLowerCase())
   );
 
 
-  // Extract karat number (10,12,14...)
-  const getKarat = (name) => {
-    const match = name.match(/\d+/);
-    return match ? match[0] + "K" : "";
+
+  /* ---------------- HELPER FUNCTION ---------------- */
+
+  // Returns first letter of commodity
+  const getSymbol = (name) => {
+    return name.charAt(0).toUpperCase();
   };
 
+
+
+  /* ---------------- UI RENDER ---------------- */
 
   return (
 
     <div className="container">
 
-      {/* Header */}
+      {/* ---------- Header ---------- */}
       <div className="header">
-        <h1>Gold Karats Dashboard</h1>
-        <p>Live Indian Gold Purity & Prices</p>
+        <h1>Indian Commodities Dashboard</h1>
+        <p>Live Market Prices | Silver Theme</p>
       </div>
 
 
-      {/* Search */}
+      {/* ---------- Search Box ---------- */}
       <input
-        type="text"
         className="search-box"
-        placeholder="Search (24K, 22K...)"
+        placeholder="Search commodity (gold, silver, copper...)"
         onChange={(e) => setSearch(e.target.value)}
       />
 
 
-      {/* Cards */}
+      {/* ---------- Loading Indicator ---------- */}
+      {loading && (
+        <p style={{ textAlign: "center", color: "#6b7280" }}>
+          Loading data...
+        </p>
+      )}
+
+
+      {/* ---------- Cards Section ---------- */}
       <div className="cards">
 
-        {filtered.map(([name, price]) => (
+        {filtered.map(([name, info]) => (
 
           <div className="card" key={name}>
 
-            {/* Ring */}
-            <div className="ring">
-              {getKarat(name)}
+            {/* Circle Icon */}
+            <div className="circle">
+              {getSymbol(name)}
             </div>
 
-            {/* Karat Name */}
-            <div className="karat">
+
+            {/* Commodity Name */}
+            <div className="name">
               {name}
             </div>
 
+
             {/* Price */}
             <div className="price">
-              ₹ {price}
+              ₹ {info.price}
             </div>
 
-            <div className="unit">
-              Per 1 Grams
+
+            {/* Change */}
+            <div className="meta">
+              Change: {info.change}
             </div>
 
           </div>
-
         ))}
 
+      </div>
+
+
+      {/* ---------- Footer ---------- */}
+      <div className="footer">
+        Data Source: CommoditiesControl | Updated Live
       </div>
 
     </div>

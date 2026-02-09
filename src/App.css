@@ -1,3 +1,6 @@
+
+/* ---------- Global Reset ---------- */
+/* Removes default browser spacing */
 * {
   margin: 0;
   padding: 0;
@@ -5,104 +8,145 @@
   font-family: "Segoe UI", Arial, sans-serif;
 }
 
+
+/* ---------- Body Styling ---------- */
+/* Main background and text color */
 body {
-  background: linear-gradient(to bottom, #0f0c02, #2a1f05);
-  color: #fff;
+  background: linear-gradient(180deg, #020617, #020617);
+  color: #e5e7eb;
 }
 
-/* Container */
+
+/* ---------- Main Container ---------- */
+/* Centers content and limits width */
 .container {
-  max-width: 1200px;
+  max-width: 1300px;
   margin: auto;
   padding: 40px 20px;
 }
 
-/* Header */
+
+/* ---------- Header Section ---------- */
+/* Title and subtitle area */
 .header {
   text-align: center;
-  margin-bottom: 40px;
+  margin-bottom: 35px;
 }
 
+/* Main heading */
 .header h1 {
-  font-size: 38px;
-  color: #f5c96a;
-  margin-bottom: 10px;
+  font-size: 36px;
+  color: #e5e7eb; /* Silver color */
 }
 
+/* Subtitle */
 .header p {
-  color: #ccc;
-  font-size: 16px;
+  color: #9ca3af;
+  margin-top: 5px;
 }
 
-/* Search */
+
+/* ---------- Search Box ---------- */
+/* Input for searching commodities */
 .search-box {
   display: block;
-  margin: 20px auto 40px;
+  margin: 25px auto 35px;
   padding: 12px;
-  width: 300px;
-  border-radius: 6px;
-  border: none;
+  width: 320px;
+  border-radius: 8px;
+  border: 1px solid #374151;
   outline: none;
   font-size: 15px;
+  background: #020617;
+  color: white;
 }
 
-/* Cards */
+/* Placeholder color */
+.search-box::placeholder {
+  color: #6b7280;
+}
+
+
+/* ---------- Cards Grid ---------- */
+/* Responsive grid for cards */
 .cards {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 30px;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 25px;
 }
 
-/* Card */
+
+/* ---------- Individual Card ---------- */
+/* Commodity display card */
 .card {
-  background: radial-gradient(circle at top, #3a2c0a, #1b1403);
-  border-radius: 16px;
+  background: #020617;
+  border-radius: 14px;
   padding: 25px 20px;
   text-align: center;
-  box-shadow: 0 0 20px rgba(255, 200, 90, 0.15);
-  transition: 0.3s;
-  border: 1px solid rgba(255, 215, 100, 0.2);
+  border: 1px solid #374151;
+  box-shadow: 0 0 12px rgba(255, 255, 255, 0.04);
+  transition: all 0.25s ease;
 }
 
+/* Hover effect */
 .card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 0 30px rgba(255, 200, 90, 0.35);
+  transform: translateY(-6px);
+  box-shadow: 0 0 25px rgba(255, 255, 255, 0.15);
+  border-color: #e5e7eb;
 }
 
-/* Ring */
-.ring {
-  width: 110px;
-  height: 110px;
+
+/* ---------- Circle Icon ---------- */
+/* Circle with first letter */
+.circle {
+  width: 90px;
+  height: 90px;
   border-radius: 50%;
   margin: 0 auto 15px;
-  border: 10px solid #f5c96a;
+  border: 5px solid #e5e7eb; /* Silver border */
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 22px;
+  color: #e5e7eb;
+  font-size: 20px;
   font-weight: bold;
-  color: #f5c96a;
-  background: #120d02;
+  background: #020617;
 }
 
-/* Karat */
-.karat {
-  font-size: 22px;
+
+/* ---------- Commodity Name ---------- */
+/* Metal name text */
+.name {
+  font-size: 18px;
   margin-bottom: 8px;
-  color: #ffd76a;
+  text-transform: capitalize;
 }
 
-/* Price */
+
+/* ---------- Price Text ---------- */
+/* Highlighted price */
 .price {
   font-size: 24px;
   font-weight: bold;
-  color: #38d46c;
-  margin-top: 10px;
+  color: #22c55e; /* Green for positive value */
+  margin-top: 8px;
 }
 
-/* Unit */
-.unit {
+
+/* ---------- Meta Information ---------- */
+/* Change / extra info */
+.meta {
   font-size: 13px;
-  color: #bbb;
+  color: #9ca3af;
   margin-top: 5px;
+}
+
+
+/* ---------- Footer ---------- */
+/* Bottom info text */
+.footer {
+  text-align: center;
+  margin-top: 40px;
+  color: #6b7280;
+  font-size: 13px;
 }
