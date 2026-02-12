@@ -1,152 +1,249 @@
 
-/* ---------- Global Reset ---------- */
-/* Removes default browser spacing */
+/* ============================================================================
+   FILE: App.css
+   RESPONSIBILITY: Styling for the commodities dashboard UI.
+   FEATURES: Responsive grid layout, card design, dark theme, hover effects.
+   ============================================================================ */
+
+/* ============================================================================
+   GLOBAL RESET - Remove default browser styles
+   ============================================================================ */
+
+/* Universal selector - applies to all HTML elements */
 * {
+  /* Remove default top and bottom margins from all elements */
   margin: 0;
+  /* Remove default padding from all elements */
   padding: 0;
+  /* Include padding and border in element width/height calculations */
   box-sizing: border-box;
+  /* Set family font for entire application */
   font-family: "Segoe UI", Arial, sans-serif;
 }
 
 
-/* ---------- Body Styling ---------- */
-/* Main background and text color */
+/* ============================================================================
+   BODY STYLING - Main page background and text color
+   ============================================================================ */
+
 body {
+  /* Create linear gradient background from top (dark) to bottom (dark) */
   background: linear-gradient(180deg, #020617, #020617);
+  /* Set default text color to light silver/gray */
   color: #e5e7eb;
 }
 
 
-/* ---------- Main Container ---------- */
-/* Centers content and limits width */
+/* ============================================================================
+   MAIN CONTAINER - Center and constrain content width
+   ============================================================================ */
+
 .container {
+  /* Set maximum width for responsive design (wide screens stay bounded) */
   max-width: 1300px;
+  /* Center the container horizontally using margin */
   margin: auto;
+  /* Add padding on all sides for spacing from edges */
   padding: 40px 20px;
 }
 
 
-/* ---------- Header Section ---------- */
-/* Title and subtitle area */
+/* ============================================================================
+   HEADER SECTION - Title and subtitle area
+   ============================================================================ */
+
 .header {
+  /* Center align all text in header */
   text-align: center;
+  /* Add spacing below header section */
   margin-bottom: 35px;
 }
 
-/* Main heading */
+/* Main heading styling */
 .header h1 {
+  /* Large font size for main title */
   font-size: 36px;
-  color: #e5e7eb; /* Silver color */
+  /* Silver color for bright contrast against dark background */
+  color: #e5e7eb;
 }
 
-/* Subtitle */
+/* Subtitle text styling */
 .header p {
+  /* Muted gray color for secondary text */
   color: #9ca3af;
+  /* Small top margin to separate from heading */
   margin-top: 5px;
 }
 
 
-/* ---------- Search Box ---------- */
-/* Input for searching commodities */
+/* ============================================================================
+   SEARCH INPUT BOX - Input field for filtering commodities
+   ============================================================================ */
+
 .search-box {
+  /* Display as block element taking full width in flow */
   display: block;
+  /* Center horizontally, add margins above and below */
   margin: 25px auto 35px;
+  /* Internal spacing inside input box */
   padding: 12px;
+  /* Fixed width for consistent appearance */
   width: 320px;
+  /* Rounded corners for modern appearance */
   border-radius: 8px;
+  /* Subtle gray border */
   border: 1px solid #374151;
+  /* Remove default focus outline (using border instead) */
   outline: none;
+  /* Medium font size for readability */
   font-size: 15px;
+  /* Match body background color */
   background: #020617;
+  /* White text for contrast against dark background */
   color: white;
 }
 
-/* Placeholder color */
+/* Placeholder text styling (hint inside input) */
 .search-box::placeholder {
+  /* Muted gray color for placeholder text */
   color: #6b7280;
 }
 
 
-/* ---------- Cards Grid ---------- */
-/* Responsive grid for cards */
+/* ============================================================================
+   CARDS GRID - Responsive grid layout for commodity cards
+   ============================================================================ */
+
 .cards {
+  /* Use CSS Grid for flexible responsive layout */
   display: grid;
+  /* Responsive columns: auto-fit = fit as many columns as possible */
+  /* minmax(240px, 1fr) = min 240px, expand to fill available space */
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  /* Space between rows and columns */
   gap: 25px;
 }
 
 
-/* ---------- Individual Card ---------- */
-/* Commodity display card */
+/* ============================================================================
+   INDIVIDUAL CARD - Commodity display card styling
+   ============================================================================ */
+
 .card {
+  /* Dark background matching body color */
   background: #020617;
+  /* Rounded corners for modern card design */
   border-radius: 14px;
+  /* Internal spacing inside card */
   padding: 25px 20px;
+  /* Center align all text within card */
   text-align: center;
+  /* Subtle gray border */
   border: 1px solid #374151;
+  /* Soft shadow for depth effect */
   box-shadow: 0 0 12px rgba(255, 255, 255, 0.04);
+  /* Smooth animation for hover effects */
   transition: all 0.25s ease;
 }
 
-/* Hover effect */
+/* Hover effect - elevate and highlight card on mouse over */
 .card:hover {
+  /* Move card up by 6 pixels on hover */
   transform: translateY(-6px);
+  /* Enhanced shadow for hover effect */
   box-shadow: 0 0 25px rgba(255, 255, 255, 0.15);
+  /* Brighten border on hover */
   border-color: #e5e7eb;
 }
 
 
-/* ---------- Circle Icon ---------- */
-/* Circle with first letter */
+/* ============================================================================
+   CIRCLE ICON - Circle with first letter of commodity
+   ============================================================================ */
+
 .circle {
+  /* Fixed square dimensions */
   width: 90px;
   height: 90px;
+  /* Make square into circle */
   border-radius: 50%;
+  /* Center circle horizontally on card */
   margin: 0 auto 15px;
-  border: 5px solid #e5e7eb; /* Silver border */
+  /* Silver border */
+  border: 5px solid #e5e7eb;
+  /* Use flexbox to center content inside circle */
   display: flex;
+  /* Center items vertically */
   align-items: center;
+  /* Center items horizontally */
   justify-content: center;
+  /* Text color inside circle */
   color: #e5e7eb;
+  /* Size of letter inside circle */
   font-size: 20px;
+  /* Make letter bold/thick */
   font-weight: bold;
+  /* Background color inside circle */
   background: #020617;
 }
 
 
-/* ---------- Commodity Name ---------- */
-/* Metal name text */
+/* ============================================================================
+   COMMODITY NAME - Metal name text display
+   ============================================================================ */
+
 .name {
+  /* Medium sized text for commodity name */
   font-size: 18px;
+  /* Spacing below name */
   margin-bottom: 8px;
+  /* Convert first letter to uppercase in display */
   text-transform: capitalize;
 }
 
 
-/* ---------- Price Text ---------- */
-/* Highlighted price */
+/* ============================================================================
+   PRICE TEXT - Highlighted current price display
+   ============================================================================ */
+
 .price {
+  /* Large bold text for emphasis */
   font-size: 24px;
+  /* Bold/thick font weight */
   font-weight: bold;
-  color: #22c55e; /* Green for positive value */
+  /* Bright green color indicating positive/current value */
+  color: #22c55e;
+  /* Space above price */
   margin-top: 8px;
 }
 
 
-/* ---------- Meta Information ---------- */
-/* Change / extra info */
+/* ============================================================================
+   META INFORMATION - Price change and additional info
+   ============================================================================ */
+
 .meta {
+  /* Small font size for secondary information */
   font-size: 13px;
+  /* Muted gray color for less prominent text */
   color: #9ca3af;
+  /* Spacing above meta text */
   margin-top: 5px;
 }
 
 
-/* ---------- Footer ---------- */
-/* Bottom info text */
+/* ============================================================================
+   FOOTER - Bottom attribution and source information
+   ============================================================================ */
+
 .footer {
+  /* Center align footer text */
   text-align: center;
+  /* Space above footer */
   margin-top: 40px;
+  /* Muted gray color for subtle footer text */
   color: #6b7280;
+  /* Small font size for footer text */
   font-size: 13px;
 }
+

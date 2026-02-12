@@ -1,68 +1,175 @@
+/* ============================================================================
+   FILE: index.css
+   RESPONSIBILITY: Global CSS styles for React application root element.
+   FEATURES: Dark/light theme variables, typography defaults, button styling.
+   NOTE: Applied before App.css for foundational styling setup.
+   ============================================================================ */
+
+/* ============================================================================
+   ROOT CSS VARIABLES AND GLOBAL DEFAULTS
+   ============================================================================ */
+
 :root {
+  /* Font family stack for entire application (system fonts for performance) */
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  
+  /* Line height for comfortable text readability (1.5x font size) */
   line-height: 1.5;
+  
+  /* Font weight for body text (normal weight, not bold) */
   font-weight: 400;
 
+  /* Support both light and dark color schemes in browser */
   color-scheme: light dark;
+  
+  /* Default text color: light gray/white with 87% opacity */
   color: rgba(255, 255, 255, 0.87);
+  
+  /* Default background color: very dark gray (#242424) */
   background-color: #242424;
 
+  /* Disable font synthesis (don't artificially create bold/italic) */
   font-synthesis: none;
+  
+  /* Optimize text rendering for legibility (anti-aliasing) */
   text-rendering: optimizeLegibility;
+  
+  /* Enable font smoothing in Webkit browsers (Chrome, Safari) */
   -webkit-font-smoothing: antialiased;
+  
+  /* Enable font smoothing in Firefox */
   -moz-osx-font-smoothing: grayscale;
 }
 
+
+/* ============================================================================
+   ANCHOR/LINK STYLING
+   ============================================================================ */
+
+/* Default styling for all anchor (<a>) elements */
 a {
+  /* Make links semi-bold for emphasis */
   font-weight: 500;
+  
+  /* Bright blue color for links */
   color: #646cff;
+  
+  /* Inherit underline/decoration from parent (no special treatment) */
   text-decoration: inherit;
 }
+
+/* Styling when user hovers mouse over link */
 a:hover {
+  /* Lighter shade of blue on hover for feedback */
   color: #535bf2;
 }
 
+
+/* ============================================================================
+   BODY ELEMENT STYLING
+   ============================================================================ */
+
 body {
+  /* Remove default browser margin */
   margin: 0;
+  
+  /* Use flexbox for centering layout */
   display: flex;
+  
+  /* Center items both horizontally and vertically */
   place-items: center;
+  
+  /* Minimum width to prevent layout breaking on mobile */
   min-width: 320px;
+  
+  /* Minimum height to fill entire viewport */
   min-height: 100vh;
 }
 
+
+/* ============================================================================
+   HEADING (H1) STYLING
+   ============================================================================ */
+
 h1 {
+  /* Large font size (3.2x default font size) */
   font-size: 3.2em;
+  
+  /* Tight line height for headings (no extra spacing between lines) */
   line-height: 1.1;
 }
 
+
+/* ============================================================================
+   BUTTON ELEMENT STYLING
+   ============================================================================ */
+
 button {
+  /* Slightly rounded corners for modern appearance */
   border-radius: 8px;
+  
+  /* Transparent border by default (shown on hover/focus) */
   border: 1px solid transparent;
+  
+  /* Internal padding for comfortable click target */
   padding: 0.6em 1.2em;
+  
+  /* Font size matching default text */
   font-size: 1em;
+  
+  /* Semi-bold text for button labels */
   font-weight: 500;
+  
+  /* Inherit typeface from parent element */
   font-family: inherit;
+  
+  /* Dark background color for dark theme */
   background-color: #1a1a1a;
+  
+  /* Change cursor to pointer on hover */
   cursor: pointer;
+  
+  /* Smooth animation when border color changes */
   transition: border-color 0.25s;
 }
+
+/* Button styling when user hovers over it */
 button:hover {
+  /* Show bright blue border on hover */
   border-color: #646cff;
 }
+
+/* Button styling when button has focus (keyboard or click) */
 button:focus,
 button:focus-visible {
+  /* Show native browser focus ring for accessibility */
   outline: 4px auto -webkit-focus-ring-color;
 }
 
+
+/* ============================================================================
+   LIGHT MODE (LIGHT COLOR SCHEME) - For devices preferring light theme
+   ============================================================================ */
+
 @media (prefers-color-scheme: light) {
+  /* Override root variables for light mode */
   :root {
+    /* Dark text color for light backgrounds */
     color: #213547;
+    
+    /* White/light background for light mode */
     background-color: #ffffff;
   }
+  
+  /* Adjust link color for light background */
   a:hover {
+    /* Darker blue for better contrast on light background */
     color: #747bff;
   }
+  
+  /* Light background for buttons in light mode */
   button {
+    /* Light gray background instead of dark */
     background-color: #f9f9f9;
   }
 }
